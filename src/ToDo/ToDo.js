@@ -38,7 +38,7 @@ export default function ToDo() {
                 <button className="to-do__add-btn">ADD</button>
             </form>
             <div className="to-do__items-container">
-                {toDoItems}
+                {toDoItems.length ? toDoItems : "There is nothing here..yet"}
             </div>
         </div>
     )
