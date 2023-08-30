@@ -1,0 +1,24 @@
+.item {
+    margin: 1em;
+    padding: .5em;
+    width: fit-content;
+    min-width: 30%;
+    border: 1px solid darkblue;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item__delete-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.item__delete-btn:hover {
+    transform: scale(1.2);
+    color: red;
+}
