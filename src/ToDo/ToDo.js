@@ -13,14 +13,25 @@ export default function ToDo() {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        setToDoList(prevToDoList => [...prevToDoList, 
-            {
-                text: toDoText, 
-                isDone: false, 
-                isImportant: false, 
-                id: nanoid()
-            }])
-        e.target.reset()
+        if (toDoText) {
+            setToDoList(prevToDoList => [...prevToDoList, 
+                {
+                    text: toDoText, 
+                    isDone: false, 
+                    isImportant: false, 
+                    id: nanoid()
+                }])
+            e.target.reset()
+            setToDoText("")
+        }
+    }
+    const getItemDone = (id) => {
+        console.log("done", id)
+        setToDoList(prevToDoList => {
+            return prevToDoList.map(el => {
+                return el.id === id ? {...el, isDone: !el.isDone} : el
+            })
+        })
     }
     const deleteItem = (id) => {
         console.log("deleted", id)
@@ -28,7 +39,14 @@ export default function ToDo() {
             return prevToDoList.filter(el => el.id !== id)
         })
     }
-    const toDoItems = toDoList.map(el => <Item deleteItem={deleteItem} key={el.id} id={el.id} text={el.text} />)
+    const toDoItems = toDoList.map(el => <Item 
+        getItemDone={getItemDone} 
+        deleteItem={deleteItem} 
+        key={el.id} 
+        id={el.id} 
+        text={el.text}
+        isDone={el.isDone} 
+        />)
     return (
         <div className="to-do">
             <h1 className="to-do__main-text">TODO list</h1>

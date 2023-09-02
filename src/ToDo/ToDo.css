@@ -1,3 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.to-do {
+    margin: 1em;
+    padding: 1em;
+}
+
+.to-do__main-text {
+    font-size: 3rem;
+}
+
+.to-do__text {
+    margin: 1em;
+    font-size: 1.5rem;
+}
+
+.to-do__form input {
+    width: 20%;
+    padding: .3em;
+    font-size: 1rem;
+}
+
+.to-do__form button {
+    padding: .65em 2.3em;
+    background: black;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.to-do__form button:hover {
+    background-color: blue;
+}
+
 .to-do__items-container {
     margin-top: 3em;
     display: flex;

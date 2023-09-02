@@ -11,14 +11,28 @@
     align-items: center;
 }
 
-.item__delete-btn {
+.item__btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item__delete-btn,
+.item__done-btn,
+.item__important-btn {
     border: none;
     background: transparent;
     font-size: 1.5rem;
     cursor: pointer;
+    margin: 0 .2em;
 }
 
 .item__delete-btn:hover {
     transform: scale(1.2);
     color: red;
+}
+
+.item__done-btn:hover {
+    transform: scale(1.2);
+    color: orange;
 }
